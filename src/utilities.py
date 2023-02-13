@@ -9,6 +9,10 @@ class Utilities():
 
     @staticmethod
     def findCommonData():
+        '''
+        Finds common data between VocCeleb1 and JukeBox1
+        '''
+
         pass
     
     @staticmethod
