@@ -12,3 +12,7 @@ At the time of this writing, the dataset for [Voxceleb V2](https://www.robots.ox
 
 
  Due to lack of time, as the owners give access in a couple of months, I have used JukeBox V1 (previously accessed) and VoxCeleb V1 for this project.
+
+ ## Methodology
+
+ ## Results
