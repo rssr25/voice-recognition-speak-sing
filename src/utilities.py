@@ -12,7 +12,20 @@ class Utilities():
         '''
         Finds common data between VocCeleb1 and JukeBox1
         '''
+    
+    @staticmethod
+    def createTable(header:list, data:list):
+
+        h = ""
+        headSeparator = ":---:"
+        for heading in header:
+            h += " | " + heading
+
+        h += " |\n"
+        for heading in header:
+            h += " | " + heading
         
+        h+= "| \n"
 
         
     
