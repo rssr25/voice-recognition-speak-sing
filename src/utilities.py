@@ -14,21 +14,38 @@ class Utilities():
         '''
     
     @staticmethod
-    def createTable(header:list, data:list):
+    def createMarkdownTable(header:list, data:list):
+
+
+        assert len(header) == len(data), 'header size does not match data size'
+        columnLength = len(data[0])
+
+        for column in data:
+
+            assert len(column) == columnLength, 'data columns should have the same length'
+
 
         h = ""
         headSeparator = ":---:"
         for heading in header:
             h += " | " + heading
 
-        h += " |\n"
+        h+= "\n"
         for heading in header:
-            h += " | " + heading
-        
-        h+= "| \n"
+            h += " | " + headSeparator + " "
 
+        ###########
+        d = ""
+
+        for i in range(len(data[0])):
+            for j in range(len(data)):
+
+                d += "|" + str(data[j][i])
+            
+            d+= "\n"
         
-    
+        return h, d
+
     @staticmethod
     def arrangeData():
         pass
