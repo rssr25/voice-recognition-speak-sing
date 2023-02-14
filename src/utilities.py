@@ -12,8 +12,9 @@ class Utilities():
         '''
         Finds common data between VocCeleb1 and JukeBox1
         '''
+        
 
-        pass
+        
     
     @staticmethod
     def arrangeData():
