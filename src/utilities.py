@@ -8,12 +8,6 @@ Description: Some utility functions for the project
 class Utilities():
 
     @staticmethod
-    def findCommonData():
-        '''
-        Finds common data between VocCeleb1 and JukeBox1
-        '''
-    
-    @staticmethod
     def createMarkdownTable(header:list, data:list):
 
 
@@ -46,6 +40,15 @@ class Utilities():
         
         return h, d
 
+
+    @staticmethod
+    def findCommonData():
+        '''
+        Finds common data between VocCeleb1 and JukeBox1
+        '''
+        #TODO: do this sis!
+        
+    
     @staticmethod
     def arrangeData():
         pass
