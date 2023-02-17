@@ -4,6 +4,10 @@ Created by: Rahul Sharma
 Description: Some utility functions for the project
 '''
 
+import json
+import os
+import shutil
+import sys
 
 class Utilities():
 
@@ -42,11 +46,39 @@ class Utilities():
 
 
     @staticmethod
-    def findCommonData():
+    def arrangeCommonData():
         '''
         Finds common data between VocCeleb1 and JukeBox1
         '''
-        #TODO: do this sis!
+        logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'w+')
+
+        ######################## FOR VOXCELEB COMMON DATA ##############################
+        vox1_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V1/vox1/wav/"
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/vox_id_celeb_commons.json", 'r') as vox_commons:
+            voxCelebs = json.load(vox_commons)
+        
+        #take id, name. get all the folders from that id in voxdata to the corresponding name of the celebrity in your folder
+        outDir = "/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/"
+
+        for id, name in voxCelebs.items():
+            
+            print("Arranging vox data for: " + id + name)
+            #getting all the folders from vox1 to the artist's current outpath
+            currentInPath = vox1_mainDir + id
+            shutil.copytree(currentInPath, outDir + name)
+            #os.rename(outDir + id, outDir + name)
+            
+            #SANITY CHECK
+            srcElements = sorted([i for i in os.listdir(vox1_mainDir + id)])
+            dstElements = sorted([j for j in os.listdir(outDir + name)])
+            assert len(srcElements) == len(dstElements), 'src and dst have different number of files'
+            
+            for i in range(len(srcElements)):
+                if not srcElements[i] == dstElements[i]:
+                    print("elements are not same")
+                    sys.exit(0)
+            
+            logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
         
     
     @staticmethod
