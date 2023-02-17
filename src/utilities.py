@@ -46,10 +46,11 @@ class Utilities():
 
 
     @staticmethod
-    def arrangeCommonData():
+    def arrangeVoxCommonData():
         '''
         Finds common data between VocCeleb1 and JukeBox1
         '''
+
         logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'w+')
 
         ######################## FOR VOXCELEB COMMON DATA ##############################
@@ -79,8 +80,15 @@ class Utilities():
                     sys.exit(0)
             
             logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
+            logfile.write("\n")
+
+        
+        
         
     
     @staticmethod
-    def arrangeData():
-        pass
+    def arrangeJukeCommonData():
+
+        ######################## FOR JUKEBOX COMMON DATA ##############################
+        log = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'a')
+        juke1_mainDir = ""
