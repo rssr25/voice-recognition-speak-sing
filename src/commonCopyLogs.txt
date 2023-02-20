@@ -1,1 +1,23 @@
-Successfully transferred Vox data for id10041: amanda_seyfriedSuccessfully transferred Vox data for id10061: anne_hathawaySuccessfully transferred Vox data for id10095: blake_sheltonSuccessfully transferred Vox data for id10115: bruno_marsSuccessfully transferred Vox data for id10130: carrie_underwoodSuccessfully transferred Vox data for id10145: charlotte_gainsbourgSuccessfully transferred Vox data for id10148: cherSuccessfully transferred Vox data for id10157: chris_martinSuccessfully transferred Vox data for id10180: cyndi_lauperSuccessfully transferred Vox data for id10399: jack_blackSuccessfully transferred Vox data for id10436: janet_jacksonSuccessfully transferred Vox data for id10497: jessie_jSuccessfully transferred Vox data for id10499: jill_scottSuccessfully transferred Vox data for id10564: josh_grobanSuccessfully transferred Vox data for id10635: kenny_rogersSuccessfully transferred Vox data for id10666: kylie_minogueSuccessfully transferred Vox data for id10678: lea_micheleSuccessfully transferred Vox data for id10679: lea_salongaSuccessfully transferred Vox data for id10703: lordeSuccessfully transferred Vox data for id10742: marie_osmondSuccessfully transferred Vox data for id10786: meat_loafSuccessfully transferred Vox data for id10825: miley_cyrusSuccessfully transferred Vox data for id10870: nelly_furtadoSuccessfully transferred Vox data for id10880: nicole_scherzingerSuccessfully transferred Vox data for id10981: rita_oraSuccessfully transferred Vox data for id11035: sammy_davis_jr.Successfully transferred Vox data for id11098: smokey_robinsonSuccessfully transferred Vox data for id11127: stevie_wonderSuccessfully transferred Vox data for id11192: troye_sivan
+Successfully transferred Vox data for id10041: amanda_seyfriedSuccessfully transferred Vox data for id10061: anne_hathawaySuccessfully transferred Vox data for id10095: blake_sheltonSuccessfully transferred Vox data for id10115: bruno_marsSuccessfully transferred Vox data for id10130: carrie_underwoodSuccessfully transferred Vox data for id10145: charlotte_gainsbourgSuccessfully transferred Vox data for id10148: cherSuccessfully transferred Vox data for id10157: chris_martinSuccessfully transferred Vox data for id10180: cyndi_lauperSuccessfully transferred Vox data for id10399: jack_blackSuccessfully transferred Vox data for id10436: janet_jacksonSuccessfully transferred Vox data for id10497: jessie_jSuccessfully transferred Vox data for id10499: jill_scottSuccessfully transferred Vox data for id10564: josh_grobanSuccessfully transferred Vox data for id10635: kenny_rogersSuccessfully transferred Vox data for id10666: kylie_minogueSuccessfully transferred Vox data for id10678: lea_micheleSuccessfully transferred Vox data for id10679: lea_salongaSuccessfully transferred Vox data for id10703: lordeSuccessfully transferred Vox data for id10742: marie_osmondSuccessfully transferred Vox data for id10786: meat_loafSuccessfully transferred Vox data for id10825: miley_cyrusSuccessfully transferred Vox data for id10870: nelly_furtadoSuccessfully transferred Vox data for id10880: nicole_scherzingerSuccessfully transferred Vox data for id10981: rita_oraSuccessfully transferred Vox data for id11035: sammy_davis_jr.Successfully transferred Vox data for id11098: smokey_robinsonSuccessfully transferred Vox data for id11127: stevie_wonderSuccessfully transferred Vox data for id11192: troye_sivanSuccessfully transferred Vox data for 420: blake_shelton
+Successfully transferred Vox data for 1128: troye_sivan
+Successfully transferred Vox data for 761: kenny_rogers
+Successfully transferred Vox data for 990: rita_ora
+Successfully transferred Vox data for 475: cher
+Successfully transferred Vox data for 359: amanda_seyfried
+Successfully transferred Vox data for 1162: chris_martin
+Successfully transferred Vox data for 814: lorde
+Successfully transferred Vox data for 776: kylie_minogue
+Successfully transferred Vox data for 924: nicole_scherzinger
+Successfully transferred Vox data for 452: bruno_mars
+Successfully transferred Vox data for 503: cyndi_lauper
+Successfully transferred Vox data for 1046: smokey_robinson
+Successfully transferred Vox data for 682: jill_scott
+Successfully transferred Vox data for 1020: sammy_davis_jr.
+Successfully transferred Vox data for 790: lea_salonga
+Successfully transferred Vox data for 892: miley_cyrus
+Successfully transferred Vox data for 466: carrie_underwood
+Successfully transferred Vox data for 867: meat_loaf
+Successfully transferred Vox data for 789: lea_michele
+Successfully transferred Vox data for 1057: stevie_wonder
+Successfully transferred Vox data for 842: marie_osmond
+Successfully transferred Vox data for 727: josh_groban
