@@ -90,5 +90,37 @@ class Utilities():
     def arrangeJukeCommonData():
 
         ######################## FOR JUKEBOX COMMON DATA ##############################
-        log = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'a')
-        juke1_mainDir = ""
+        logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'a')
+        juke1_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/JukeBox_FULL/TRAIN/"
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/juke_id_celeb_commons.json", 'r') as juke_commons:
+            jukeCelebs = json.load(juke_commons)
+        
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/auxiliarys.json") as auxBitches:
+            auxis = json.load(auxBitches)
+        
+        dontInclude = [key for key, value in auxis.items()]
+
+        outDir = "/netscratch/rsharma/voice-recognition-speak-sing/data/singing/"
+
+        for id, name in jukeCelebs.items():
+            if id in dontInclude:
+                continue
+
+            print("Arranging Juke data for: " + id + name)
+            #getting all the folders from vox1 to the artist's current outpath
+            currentInPath = juke1_mainDir + id
+            shutil.copytree(currentInPath, outDir + name)
+
+
+        #SANITY CHECK
+            srcElements = sorted([i for i in os.listdir(juke1_mainDir + id)])
+            dstElements = sorted([j for j in os.listdir(outDir + name)])
+            assert len(srcElements) == len(dstElements), 'src and dst have different number of files'
+            
+            for i in range(len(srcElements)):
+                if not srcElements[i] == dstElements[i]:
+                    print("elements are not same")
+                    sys.exit(0)
+            
+            logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
+            logfile.write("\n")
