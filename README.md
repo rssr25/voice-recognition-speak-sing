@@ -18,7 +18,7 @@ At the time of this writing, the dataset for [Voxceleb V2](https://www.robots.ox
 
  | artist_name | voxceleb_id | jukebox_id | singing_time | speaking_time | vox_path | juke_path
  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---: 
-|marie_osmond| id10742|842|239|690|/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/marie_osmond|/netscratch/rsharma/voice-recognition-speak-sing/data/singing/marie_osmond|
+ |marie_osmond| id10742|842|239|690|/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/marie_osmond|/netscratch/rsharma/voice-recognition-speak-sing/data/singing/marie_osmond|
 |lea_salonga|id10679|790|239|1957|/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/lea_salonga|/netscratch/rsharma/voice-recognition-speak-sing/data/singing/lea_salonga
 |bruno_mars|id10115|452|239|611|/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/bruno_mars|/netscratch/rsharma/voice-recognition-speak-sing/data/singing/bruno_mars
 |smokey_robinson|id11098|1046|239|2447|/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/smokey_robinson|/netscratch/rsharma/voice-recognition-speak-sing/data/singing/smokey_robinson
