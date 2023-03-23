@@ -4,6 +4,9 @@ Created By: Rahul Sharma
 Description: class for extracting different features from the audio files
 '''
 
+import librosa
+
+
 class AudioFeatures():
 
     @staticmethod
