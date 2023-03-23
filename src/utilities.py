@@ -13,7 +13,14 @@ class Utilities():
 
     @staticmethod
     def createMarkdownTable(header:list, data:list):
-
+        '''
+         Creates a markdown table with data of the form
+         header: [col1, col2,..., coln]
+         data: [[element1, element2,..., element_n], 
+                [element1, element2,..., element_n], 
+                 ..., 
+                [element1, element2,..., element_n]]
+        '''
 
         assert len(header) == len(data), 'header size does not match data size'
         columnLength = len(data[0])
