@@ -2,6 +2,8 @@
 Created on: March 23, 2023 at 16:30
 Created By: Rahul Sharma
 Description: class for extracting different features from the audio files
+1. mfcc
+2. lpc
 '''
 
 import librosa
@@ -10,7 +12,7 @@ import numpy as np
 class AudioFeatures():
 
     @staticmethod
-    def lpc(filepath, nmfcc):
+    def mfcc(filepath, nmfcc):
         #load the file
         y, sr = librosa.load(filepath)
 
@@ -25,5 +27,5 @@ class AudioFeatures():
 
     
     @staticmethod
-    def mfcc(filepath, order, axis):
+    def lpc(filepath, order, axis):
         pass
