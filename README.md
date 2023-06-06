@@ -11,9 +11,18 @@ At the time of this writing, the dataset for [Voxceleb V2](https://www.robots.ox
 **Singing Data**: The singing data that has been used is [JukeBox V1](https://iprobe.cse.msu.edu/dataset_detail.php?id=8&?title=JukeBox:_A_Speaker_Recognition_Dataset_with_Multi-lingual_Singing_Voice_Audio). The access to this data is not instant and required filling up a form. The version 2 of the dataset [JukeBox V2](https://iprobe.cse.msu.edu/dataset_detail.php?id=9) contains both speaking and singing audio files.
 
 
- Due to lack of time, as the owners give access in a couple of months, I have used JukeBox V1 (previously accessed) and VoxCeleb V1 for this project.
+ Due to lack of time, as the owners give access in a couple of months, I have used JukeBox V1 (previously accessed) and VoxCeleb V1 for this project (more data getting collected).
 
  ## Data collected
+
+ `06.06.2023`
+
+ I think downloading VoxCeleb V2 will also help in creating a larger dataset for my project. 
+
+`30.05.2023`
+
+<br>
+
 <div class="table-wrapper" markdown="block">
 
  | artist_name | voxceleb_id | jukebox_id | singing_time | speaking_time | vox_path | juke_path
