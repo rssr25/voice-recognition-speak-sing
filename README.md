@@ -19,6 +19,8 @@ At the time of this writing, the dataset for [Voxceleb V2](https://www.robots.ox
 
  I think downloading VoxCeleb V2 will also help in creating a larger dataset for my project. 
 
+>:warning: `id05348` and `id04170` are not available in VoxCeleb_V2 `test` folder as stated in [vox2_meta.csv](/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/vox2_meta.csv)
+
 `30.05.2023`
 
 <br>
