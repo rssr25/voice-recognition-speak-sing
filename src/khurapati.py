@@ -2,6 +2,7 @@
 import json
 import pandas as pd
 from utilities import Utilities
+import os
 
 
 meta = pd.read_csv("/Users/rahulsharma/Desktop/Semester 4/Project/MyProject/voice-recognition-speak-sing/data/metdata.csv")
@@ -13,5 +14,57 @@ for columnName in header:
 
 h, d = Utilities.createMarkdownTable(header, data)
 print(h)
+
+
+def doubleCheckJukebox():
+
+    '''
+    Take all the ids of vox2 data and compare them to the text and audio data
+    '''
+    workdir = "/netscratch/rsharma/voice-recognition-speak-sing/"
+    with open(workdir + "vox2_id_celeb_pair.json", "r") as data:
+
+        vox2data = json.load(data)
+    
+
+    ids = set(list(vox2data.keys()))
+
+    #get the ids from the audio data
+    audio_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/"
+    audio_test = set(os.listdir("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/test/aac"))
+    audio_dev = set(os.listdir("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"))
+    audio_ids = audio_test.union(audio_dev)
+
+
+    #get the ids from the text data
+    text_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/"
+    text_test = set(os.listdir("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/no_audio/test"))
+    text_dev = set(os.listdir("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/no_audio/dev"))
+    text_ids = text_test.union(text_dev)
+
+
+    print("***************** INFORMATION ON COUNT OF DATA *******************")
+    print(f'num_of_ids: {len(ids)}')
+
+    print(f'audio_test: {len(audio_test)}')
+    print(f'audio_dev: {len(audio_dev)}')
+    print(f'audio_test + audio_dev: {len(audio_test) + len(audio_dev)}')
+
+    print(f'text_test: {len(text_test)}')
+    print(f'text_dev: {len(text_dev)}')
+    print(f'text_test + text_dev: {len(text_test) + len(text_dev)}')
+
+
+    """
+    Missing data
+    id05348 ,n00534s7 ,m ,test ----> n005347, "Luke_Hemsworth", 422, 0, m
+    id04170 ,n004169 ,m ,test ----> n004169, "Joel_Lundqvist", 360, 1, m
+
+
+    wheere index changed in Vox2_meta: id01420 ,n001419 ,f ,dev 
+    """
+
+
+
 
 
