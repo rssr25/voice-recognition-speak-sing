@@ -38,7 +38,7 @@ class VoxCeleb_V2():
     def makeVox2Meta():#
         #vggIDs
         vox2meta = []
-        with open("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/vgg_id_celeb_list.json", "r") as data:
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/vgg2_id_celeb_list.json", "r") as data:
             
             vggIDCelebJson = json.load(data)
             #print(vggIDCelebJson)
