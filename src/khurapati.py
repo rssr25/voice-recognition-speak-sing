@@ -3,17 +3,18 @@ import json
 import pandas as pd
 from utilities import Utilities
 import os
+import threading
 
 
-meta = pd.read_csv("/Users/rahulsharma/Desktop/Semester 4/Project/MyProject/voice-recognition-speak-sing/data/metdata.csv")
-header = list(meta)[1:]
-data = []
-for columnName in header:
-    data.append(list(meta[columnName]))
+# meta = pd.read_csv("/Users/rahulsharma/Desktop/Semester 4/Project/MyProject/voice-recognition-speak-sing/data/metdata.csv")
+# header = list(meta)[1:]
+# data = []
+# for columnName in header:
+#     data.append(list(meta[columnName]))
 
 
-h, d = Utilities.createMarkdownTable(header, data)
-print(h)
+# h, d = Utilities.createMarkdownTable(header, data)
+# print(h)
 
 
 def doubleCheckJukebox():
@@ -66,5 +67,15 @@ def doubleCheckJukebox():
 
 
 
+def convert_to_wav(listOfExtensions, dirPath):
+
+    
+    Utilities.convertToWav(formats_to_convert, dirPath)
 
 
+
+if __name__ == "__main__":
+
+    formats_to_convert = ['.m4a']
+    dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"
+    convert_to_wav(formats_to_convert, dirPath)
