@@ -136,9 +136,10 @@ class Utilities():
         
     
     @staticmethod
-    def convertToWav(formats_to_convert:list, dirPath):
+    def convertToWav(formats_to_convert:list, dirPaths):
 
         for dirPath in dirPaths:
+            print(f"Running for {dirPath}")
             for (dirpath, dirnames, filenames) in os.walk(dirPath + "/"):
                 
                 for filename in filenames:
@@ -152,7 +153,7 @@ class Utilities():
                                     file_extension_final)
                             wav_filename = filename.replace(file_extension_final, 'wav')
                             wav_path = dirpath + '/' + wav_filename
-                            print('CONVERTING: ' + str(filepath))
+                            #print('CONVERTING: ' + str(filepath))
                             file_handle = track.export(wav_path, format='wav')
                             os.remove(filepath)
                         except:
