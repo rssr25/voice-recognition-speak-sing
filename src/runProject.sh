@@ -7,7 +7,7 @@ srun --mail-type=ALL \
      --partition=A100-40GB \
      --container-workdir="`pwd`" \
      --ntasks=1 \
-     --cpus-per-task=64 \
-     --mem=128GB \
+     --cpus-per-task=1 \
+     --mem=24GB \
      --time=1-0:0 \
-     python /netscratch/rsharma/voice-recognition-speak-sing/src/convert_m4a_to_wav_multiprocessing.py
+     python /netscratch/rsharma/voice-recognition-speak-sing/src/khurapati.py

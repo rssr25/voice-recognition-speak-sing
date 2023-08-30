@@ -73,9 +73,30 @@ def convert_to_wav(listOfExtensions, dirPath):
     Utilities.convertToWav(formats_to_convert, dirPath)
 
 
+def verify_the_VoxCeleb_m4a_2_wav():
+
+    dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"
+    formats_to_convert = [".wav"]
+    counter = 0
+
+    for (dirpath, dirnames, filenames) in os.walk(dirPath + "/"):
+
+        for filename in filenames:
+            if filename.endswith(tuple(formats_to_convert)):
+                counter += 1
+
+                #filepath = dirpath + '/' + filename
+                #(path, file_extension) = os.path.splitext(filepath)
+    
+    print(counter)
+
+
+
 
 if __name__ == "__main__":
 
     formats_to_convert = ['.m4a']
     dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"
-    convert_to_wav(formats_to_convert, dirPath)
+    #convert_to_wav(formats_to_convert, dirPath)
+
+    verify_the_VoxCeleb_m4a_2_wav()

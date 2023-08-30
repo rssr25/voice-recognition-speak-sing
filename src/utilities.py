@@ -153,7 +153,7 @@ class Utilities():
                                     file_extension_final)
                             wav_filename = filename.replace(file_extension_final, 'wav')
                             wav_path = dirpath + '/' + wav_filename
-                            #print('CONVERTING: ' + str(filepath))
+                            print('CONVERTING: ' + str(filepath))
                             file_handle = track.export(wav_path, format='wav')
                             os.remove(filepath)
                         except:
