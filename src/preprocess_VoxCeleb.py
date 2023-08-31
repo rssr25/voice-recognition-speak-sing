@@ -52,7 +52,43 @@ class PreprocessVox2():
             durations = json.load(durationFile)
         
         assert len(durations) == 1092009, f"Discrepancy in the number of files {len(durations)}/{1092009}"
-        print(len(durations))
+        
+
+        ##do some 
+
+    
+    @staticmethod
+    def data_duration_per_artist():
+
+        dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac/"
+        allPaths = [dirPath + i for i in os.listdir(dirPath)]
+
+        durationData = {}
+
+        
+        for artistPath in allPaths:
+            durationOfDataForArtist = 0
+
+            videosForArtistPaths = [artistPath + "/" + i for i in os.listdir(artistPath)]
+            
+            for videoPath in videosForArtistPaths:
+                
+                snippets = [videoPath + "/" + i for i in os.listdir(videoPath)]
+
+                for snippet in snippets:
+                    track = AudioSegment.from_file(snippet)
+
+                    durationOfDataForArtist += track.duration_seconds
+            
+            durationData[artistPath] = durationOfDataForArtist
+        
+
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/src/artist_total_duration.json", "w+") as durationFile:
+            json.dump(durationData, durationFile)
+
+
+
+
         
 
     @staticmethod
@@ -85,7 +121,8 @@ if __name__ == "__main__":
 
     dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"
     #PreprocessVox2.get_duration_of_files_in_folder(dirPath)
-    PreprocessVox2.make_5_sec_chunks()
+    #PreprocessVox2.make_5_sec_chunks()
+    PreprocessVox2. data_duration_per_artist()
 
     
 

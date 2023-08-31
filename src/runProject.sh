@@ -7,7 +7,7 @@ srun --mail-type=ALL \
      --partition=A100-40GB \
      --container-workdir="`pwd`" \
      --ntasks=1 \
-     --cpus-per-task=1 \
-     --mem=24GB \
+     --cpus-per-task=4 \
+     --mem=32GB \
      --time=1-0:0 \
-     python /netscratch/rsharma/voice-recognition-speak-sing/src/khurapati.py
+     python /netscratch/rsharma/voice-recognition-speak-sing/src/preprocess_JukeBox.py

@@ -55,9 +55,9 @@ class Utilities():
 
 
     @staticmethod
-    def arrangeVoxCommonData():
+    def arrangeVox1_Jukebox1_CommonData():
         '''
-        Finds common data between VocCeleb1 and JukeBox1
+        Finds common data between VoxCeleb1 and JukeBox1
         '''
 
         logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'w+')
