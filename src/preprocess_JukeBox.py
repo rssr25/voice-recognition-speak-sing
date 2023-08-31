@@ -59,8 +59,16 @@ def get_vox_1_2_jukebox_commons():
     vox2Names    = [i.replace(" ", "_") for i in vox2Names]
 
 
-    print(set(jukeBoxNames) & set(vox1Names) & set(vox2Names))
+    jukeAndVox1Commons = set(jukeBoxNames) & set(vox1Names)
+    jukeAndVox2Commons = set(jukeBoxNames) & set(vox2Names)
+    commons_between_above_2_sets = jukeAndVox1Commons & jukeAndVox2Commons
+    commonsVox1_2 = set(vox1Names) & set(vox2Names)
 
+
+    print(len(jukeAndVox1Commons))
+    print(len(jukeAndVox2Commons))
+    print(len(commons_between_above_2_sets))
+    print(len(commonsVox1_2))
 
 
 
