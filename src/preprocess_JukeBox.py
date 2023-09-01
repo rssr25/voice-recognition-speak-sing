@@ -73,6 +73,56 @@ def get_vox_1_2_jukebox_commons():
     print(f"Common between vox1 and  vox2: {len(commonsVox1_2)}")
 
 
+    #### for JukeBox TEST
+    jukebox_test_dirpath = "/netscratch/rsharma/voice-recognition-speak-sing/JukeBox_FULL/TEST"
+    jukeTestIds = os.listdir(jukebox_test_dirpath)
+    jukeTestArtists = []
+    
+    with open("/netscratch/rsharma/voice-recognition-speak-sing/jukebox_id_artist.json", "r") as jukeidartistFile:
+        juke_id_artist = json.load(jukeidartistFile)
+
+    
+    for id in jukeTestIds:
+        jukeTestArtists.append(juke_id_artist[id])
+    
+
+    jukeTestArtists = [str(i).lower() for i in jukeTestArtists]
+    jukeTestArtists = [i.replace(" ", "_") for i in jukeTestArtists]
+    jukeTestArtists = set(jukeTestArtists)
+
+    jukeTestAndVox1 = jukeTestArtists & set(vox1Names)
+    jukeTestAndVox2 = jukeTestArtists & set(vox2Names)
+
+    print(f"Common between jukebox test and vox1: {len(jukeTestAndVox1)}")
+    print(f"Common between jukebox test and vox2: {len(jukeTestAndVox2)}")
+
+
+    print(f"Common between jukebox test and vox1: {len(jukeAndVox1Commons)}")
+    
+
+def data_duration_per_artist():
+
+    dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/JukeBox_FULL/TRAIN/"
+    allPaths = [dirPath + i for i in os.listdir(dirPath)]
+
+    durationData = {}
+
+    
+    for artistPath in allPaths:
+        durationOfDataForArtist = 0
+
+        snippets = [artistPath + "/" + i for i in os.listdir(artistPath)]
+
+        for snippet in snippets:
+            track = AudioSegment.from_file(snippet)
+
+            durationOfDataForArtist += track.duration_seconds
+        
+        durationData[artistPath] = durationOfDataForArtist
+    
+
+    with open("/netscratch/rsharma/voice-recognition-speak-sing/src/jukebox_artist_total_duration.json", "w+") as durationFile:
+        json.dump(durationData, durationFile)
 
 
 
@@ -92,4 +142,6 @@ if __name__ == "__main__":
     # for proc in procs:
     #     proc.join()        
 
-    get_vox_1_2_jukebox_commons()
+    #get_vox_1_2_jukebox_commons()
+
+    data_duration_per_artist()
