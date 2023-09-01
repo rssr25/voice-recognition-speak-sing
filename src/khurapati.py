@@ -3,7 +3,6 @@ import json
 import pandas as pd
 from utilities import Utilities
 import os
-import threading
 
 
 # meta = pd.read_csv("/Users/rahulsharma/Desktop/Semester 4/Project/MyProject/voice-recognition-speak-sing/data/metdata.csv")
@@ -99,4 +98,15 @@ if __name__ == "__main__":
     dirPath = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac"
     #convert_to_wav(formats_to_convert, dirPath)
 
-    verify_the_VoxCeleb_m4a_2_wav()
+    #verify_the_VoxCeleb_m4a_2_wav()
+
+    with open("/Users/rahulsharma/Desktop/Semester_5/Project/MyProject/voice-recognition-speak-sing/src/artist_total_duration.json", "r") as durationData:
+
+        durations = json.load(durationData)
+    
+
+    time = sorted(list(durations.values()))
+    lessthan250 = [i for i in time if i < 250]
+    print(len(lessthan250))
+
+    print(len(time))

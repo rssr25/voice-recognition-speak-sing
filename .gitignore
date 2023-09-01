@@ -8,3 +8,4 @@ VoxCeleb_1_2
 project.sqsh
 src/testFolder
 src/vox2_durations.json
+src/__pycache__
