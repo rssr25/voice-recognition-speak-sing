@@ -64,11 +64,13 @@ def get_vox_1_2_jukebox_commons():
     commons_between_above_2_sets = jukeAndVox1Commons & jukeAndVox2Commons
     commonsVox1_2 = set(vox1Names) & set(vox2Names)
 
-
-    print(len(jukeAndVox1Commons))
-    print(len(jukeAndVox2Commons))
-    print(len(commons_between_above_2_sets))
-    print(len(commonsVox1_2))
+    print(f"Total JukeBoxNames: {len(jukeBoxNames)}")
+    print(f"Total vox1Names: {len(vox1Names)}")
+    print(f"Total vox2Names: {len(vox2Names)}")
+    print(f"Common between jukebox and vox1: {len(jukeAndVox1Commons)}")
+    print(f"Common between jukebox and vox2: {len(jukeAndVox2Commons)}")
+    print(f"Common between above 2: {len(commons_between_above_2_sets)}")
+    print(f"Common between vox1 and  vox2: {len(commonsVox1_2)}")
 
 
 
