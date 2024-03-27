@@ -91,7 +91,51 @@ class Utilities():
             logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
             logfile.write("\n")
 
+    
+    @staticmethod
+    def arrangeVox2_Jukebox1_CommonData():
+        '''
+        Finds common data between VoxCeleb2 and JukeBox1
+        '''
+
+        logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'w+')
+
+        ######################## FOR VOXCELEB COMMON DATA ##############################
+        vox2_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/VoxCeleb_1_2/V2/audio/dev/aac/"
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/vox2_id_celeb_commons.json", 'r') as vox2_commons:
+            vox2Celebs = json.load(vox2_commons)
         
+        #take id, name. get all the folders from that id in voxdata to the corresponding name of the celebrity in your folder
+        outDir = "/netscratch/rsharma/voice-recognition-speak-sing/data/speaking/"
+
+
+        for id, name in vox2Celebs.items():
+            
+            try:
+                print("Arranging vox data for: " + id + name)
+                #getting all the folders from vox1 to the artist's current outpath
+                currentInPath = vox2_mainDir + id
+                if os.path.exists(outDir + name):
+                    continue
+                shutil.copytree(currentInPath, outDir + name)
+                #os.rename(outDir + id, outDir + name)
+                
+                #SANITY CHECK
+                srcElements = sorted([i for i in os.listdir(vox2_mainDir + id)])
+                dstElements = sorted([j for j in os.listdir(outDir + name)])
+                assert len(srcElements) == len(dstElements), 'src and dst have different number of files'
+                
+                for i in range(len(srcElements)):
+                    if not srcElements[i] == dstElements[i]:
+                        print("elements are not same")
+                        sys.exit(0)
+                
+                logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
+                logfile.write("\n")
+            except:
+                continue
+   
+
         
         
     
@@ -134,6 +178,53 @@ class Utilities():
             logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
             logfile.write("\n")
         
+    @staticmethod
+    def arrangeJukeV2CommonData():
+
+        ######################## FOR JUKEBOX COMMON DATA ##############################
+        logfile = open("/netscratch/rsharma/voice-recognition-speak-sing/src/commonCopyLogs.txt", 'a')
+        juke1_mainDir = "/netscratch/rsharma/voice-recognition-speak-sing/JukeBox_FULL/TRAIN/"
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/jukeVox2_id_celeb_commons.json", 'r') as juke_commons:
+            jukeCelebs = json.load(juke_commons)
+        
+        with open("/netscratch/rsharma/voice-recognition-speak-sing/auxiliarys_jukeVox2.json") as auxBitches:
+            auxis = json.load(auxBitches)
+        
+        dontInclude = [key for key, value in auxis.items()]
+
+        outDir = "/netscratch/rsharma/voice-recognition-speak-sing/data/singing/"
+
+        for id, name in jukeCelebs.items():
+
+            try:
+                if id in dontInclude:
+                    continue
+
+                print("Arranging Juke data for: " + id + name)
+                #getting all the folders from vox1 to the artist's current outpath
+                currentInPath = juke1_mainDir + id
+
+                if os.path.exists(outDir + name):
+                    continue
+                shutil.copytree(currentInPath, outDir + name)
+
+
+            #SANITY CHECK
+                srcElements = sorted([i for i in os.listdir(juke1_mainDir + id)])
+                dstElements = sorted([j for j in os.listdir(outDir + name)])
+                assert len(srcElements) == len(dstElements), 'src and dst have different number of files'
+                
+                for i in range(len(srcElements)):
+                    if not srcElements[i] == dstElements[i]:
+                        print("elements are not same")
+                        sys.exit(0)
+                
+                logfile.write("Successfully transferred Vox data for {}: {}".format(id, name))
+                logfile.write("\n")
+            
+            except Exception as e:
+                print(e)
+                continue
     
     @staticmethod
     def convertToWav(formats_to_convert:list, dirPaths):
